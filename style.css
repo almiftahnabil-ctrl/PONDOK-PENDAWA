@@ -1,0 +1,555 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+    font-family: Arial, sans-serif;
+    background:#f3f4f6;
+    color:#1f2933;
+}
+a { text-decoration:none; color:inherit; }
+
+.container {
+    width:90%;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+/* TOP BAR */
+.topbar {
+    background:#111827;
+    color:#e5e7eb;
+    font-size:.8rem;
+}
+.topbar .container {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:.3rem 0;
+}
+.topbar-links a {
+    margin-left:1rem;
+    color:#e5e7eb;
+}
+
+/* NAVBAR */
+header {
+    background:#ffffff;
+    box-shadow:0 1px 4px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:50;
+}
+.navbar {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:.8rem 0;
+}
+.logo {
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+}
+.logo-circle {
+    width:38px; height:38px;
+    border-radius:999px;
+    background:#065f46;
+}
+.logo-text {
+    font-weight:bold;
+    font-size:1rem;
+    line-height:1.2;
+}
+.logo-text span {
+    font-weight:normal;
+    font-size:.8rem;
+    color:#6b7280;
+}
+
+nav ul {
+    list-style:none;
+    display:flex;
+    gap:1rem;
+    font-size:.9rem;
+}
+nav a {
+    padding:.35rem .7rem;
+    border-radius:999px;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+nav a:hover {
+    background:#065f46;
+    color:white;
+    transform: translateY(-1px);
+}
+
+/* HERO */
+#hero {
+    background:#0f172a;
+    color:white;
+    padding:3.5rem 0 4rem; /* dibuat lebih lega */
+}
+.hero-grid {
+    display:grid;
+    grid-template-columns:2fr 1.8fr;
+    gap:2rem;
+    align-items:center;
+    animation: heroFadeUp .9s ease-out;   /* animasi masuk dari bawah */
+}
+.badge {
+    display:inline-block;
+    background:#bbf7d0;
+    color:#064e3b;
+    padding:.2rem .6rem;
+    border-radius:999px;
+    font-size:.75rem;
+    margin-bottom:.6rem;
+}
+.hero-title {
+    font-size:2rem;
+    margin-bottom:.6rem;
+}
+.hero-subtitle {
+    font-size:.95rem;
+    color:#e5e7eb;
+    margin-bottom:1rem;
+    max-width:450px;
+}
+.hero-buttons {
+    display:flex;
+    flex-wrap:wrap;
+    gap:.6rem;
+}
+.btn {
+    display:inline-block;
+    padding:.55rem 1.1rem;
+    border-radius:999px;
+    font-size:.9rem;
+    cursor:pointer;
+    border:2px solid transparent;
+    box-shadow:0 0 0 rgba(250,204,21,0);
+    transition: background .2s ease, color .2s ease, box-shadow .25s ease, transform .15s ease;
+}
+.btn-primary {
+    background:#facc15;
+    color:#1f2933;
+}
+.btn-primary:hover {
+    background:#fbbf24;
+    box-shadow:0 0 18px rgba(250,204,21,0.4);
+    transform: translateY(-1px);
+}
+.btn-outline {
+    background:transparent;
+    border-color:#facc15;
+    color:#facc15;
+}
+.btn-outline:hover {
+    background:#facc15;
+    color:#1f2933;
+    box-shadow:0 0 18px rgba(250,204,21,0.4);
+    transform: translateY(-1px);
+}
+
+.hero-image-wrapper {
+    background:#020617;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid #1f2937;
+    box-shadow:0 18px 40px rgba(0,0,0,.5); /* glow card hero */
+}
+/* gambar hero untuk slideshow */
+.hero-image {
+    display:block;
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    opacity:1;
+    transition: opacity .8s ease-in-out;  /* animasi fade saat ganti foto */
+}
+.hero-caption {
+    padding:.6rem .8rem;
+    font-size:.8rem;
+    border-top:1px solid #1f2937;
+    color:#9ca3af;
+}
+
+/* MAIN BODY */
+main {
+    padding:2rem 0 3rem;
+}
+
+.layout {
+    display:grid;
+    grid-template-columns:2.2fr 1.4fr;
+    gap:1.5rem;
+}
+
+/* SECTION BOXES */
+.section-box {
+    background:white;
+    border-radius:10px;
+    box-shadow:0 1px 4px rgba(0,0,0,.06);
+    padding:1.3rem 1.4rem;
+    margin-bottom:1.3rem;
+    font-size:.9rem;
+}
+.section-box h2 {
+    font-size:1.1rem;
+    margin-bottom:.5rem;
+    color:#065f46;
+}
+.section-box h3 {
+    font-size:1rem;
+    margin-bottom:.4rem;
+    color:#065f46;
+}
+.section-box p { margin-bottom:.5rem; }
+
+.tagline {
+    font-style:italic;
+    border-left:3px solid #065f46;
+    padding-left:.7rem;
+    font-size:.85rem;
+    color:#4b5563;
+    margin:.4rem 0 .8rem;
+}
+
+.list {
+    margin-left:1.1rem;
+}
+.list li {
+    margin-bottom:.25rem;
+}
+
+/* UNIT USAHA – CARD STYLE MODERN */
+.unit-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:0.9rem;
+    margin-top:.7rem;
+}
+
+/* <a> langsung jadi card */
+.unit-card {
+    display:flex;
+    gap:.9rem;
+    align-items:stretch;
+    padding:.7rem .9rem;
+    border-radius:14px;
+    background:linear-gradient(135deg,#f9fafb,#eef2ff);
+    border:1px solid #e5e7eb;
+    text-decoration:none;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(15,23,42,.06);
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        background .25s ease;
+}
+
+.unit-card::before {
+    content:"";
+    position:absolute;
+    inset:-40%;
+    background:radial-gradient(circle at top left, rgba(56,189,248,.25), transparent 55%);
+    opacity:0;
+    transition:opacity .25s ease;
+    pointer-events:none;
+}
+
+.unit-card:hover {
+    transform:translateY(-3px);
+    box-shadow:0 16px 32px rgba(15,23,42,.18);
+    background:linear-gradient(135deg,#ffffff,#e0f2fe);
+}
+
+.unit-card:hover::before {
+    opacity:1;
+}
+
+/* gambar di kiri */
+.unit-image {
+    width:88px;
+    min-width:88px;
+    height:70px;
+    border-radius:10px;
+    overflow:hidden;
+    background:#d1d5db;
+    position:relative;
+}
+.unit-image img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform:scale(1.05);
+    transition:transform .35s ease;
+}
+.unit-card:hover .unit-image img {
+    transform:scale(1.12);
+}
+
+/* konten teks di kanan */
+.unit-content {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:.15rem;
+}
+
+.unit-label {
+    font-size:.7rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:#6b7280;
+}
+
+.unit-title {
+    font-size:.95rem;
+    font-weight:700;
+    color:#111827;
+}
+
+.unit-desc {
+    font-size:.8rem;
+    color:#4b5563;
+}
+
+.unit-tag {
+    margin-top:.2rem;
+    font-size:.75rem;
+    font-weight:600;
+    color:#0f766e;
+}
+
+/* RESPONSIVE – 1 kolom di layar kecil */
+@media (max-width:900px){
+    .unit-grid {
+        grid-template-columns:1fr;
+    }
+    .unit-card {
+        padding:.9rem 1rem;
+    }
+}
+
+/* supaya <a> pembungkus card full lebar */
+.unit-grid > a {
+    display:block;
+}
+.unit-card {
+    display:flex;
+    gap:.6rem;
+    align-items:center;
+    padding:.5rem .7rem;
+    border-radius:8px;
+    background:#f9fafb;
+    border:1px solid #e5e7eb;
+    transition:background .15s, transform .15s, box-shadow .15s;
+}
+.unit-card:hover {
+    background:#eef2ff;
+    transform:translateY(-2px);
+    box-shadow:0 3px 8px rgba(0,0,0,.09);
+}
+
+.unit-thumb {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background:#d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.unit-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.unit-info-title {
+    font-size:.9rem;
+    font-weight:bold;
+    color:#111827;
+}
+.unit-info-desc {
+    font-size:.78rem;
+    color:#6b7280;
+}
+
+/* NEWS */
+.news-list {
+    list-style:none;
+}
+.news-item {
+    border-bottom:1px solid #e5e7eb;
+    padding:.5rem 0;
+}
+.news-item:last-child { border-bottom:none; }
+.news-title {
+    font-size:.9rem;
+    color:#111827;
+}
+.news-meta {
+    font-size:.75rem;
+    color:#6b7280;
+}
+
+/* SIDEBAR */
+.sidebar-title {
+    font-size:.95rem;
+    font-weight:bold;
+    margin-bottom:.5rem;
+    color:#111827;
+}
+.sidebar-box {
+    background:white;
+    border-radius:10px;
+    padding:1rem 1.1rem;
+    box-shadow:0 1px 4px rgba(0,0,0,.06);
+    margin-bottom:1.1rem;
+    font-size:.85rem;
+}
+
+/* FOOTER */
+footer {
+    background:#020617;
+    color:#9ca3af;
+    font-size:.8rem;
+    padding:.7rem 0;
+    text-align:center;
+}
+
+/* ANIMASI FADE UP UNTUK HERO */
+@keyframes heroFadeUp {
+    from {
+        opacity:0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+/* ANIMASI REVEAL UNTUK SECTION & SIDEBAR */
+.reveal {
+    opacity:0;
+    transform: translateY(24px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.show {
+    opacity:1;
+    transform: translateY(0);
+}
+/* === STRIP FOTO ALUMNI – FLYER IG PERSEGI (FINAL) === */
+
+#alumni-section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* panel putih besar */
+.alumni-strip {
+    overflow: visible;                 /* biar kartu boleh keluar saat hover */
+    position: relative;
+    border-radius: 18px;
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    padding:1.3rem 1.1rem;             /* ruang lega di atas/bawah */
+    box-shadow:0 8px 24px rgba(15,23,42,.08);
+}
+
+/* deretan kartu yang berjalan otomatis */
+.alumni-track {
+    display:flex;
+    gap:1rem;
+    animation: alumniScroll 35s linear infinite;
+}
+
+/* kartu alumni (flyer IG 3:4) */
+.alumni-item {
+    width:300px;                       /* lebar kartu */
+    height:400px;                      /* tinggi kartu */
+    border-radius:20px;
+    overflow:hidden;
+    flex-shrink:0;
+    background:#f1f5f9;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0.1rem 0;
+    box-shadow:
+        0 4px 12px rgba(15,23,42,.10),
+        0 0 0 rgba(255,255,255,0);
+    position: relative;
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        filter .35s ease;
+}
+
+.alumni-item img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition: transform .35s ease;
+}
+
+/* ANIMASI SCROLLING */
+@keyframes alumniScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* === INTERAKSI & HOVER === */
+
+/* saat mouse masuk area strip → animasi berhenti */
+.alumni-strip:hover .alumni-track {
+    animation-play-state: paused;
+}
+
+/* saat strip di-hover, semua kartu agak redup */
+.alumni-strip:hover .alumni-item {
+    filter: brightness(0.7);
+}
+
+/* kartu yang di-hover: terang, membesar & naik keluar panel */
+.alumni-item:hover {
+    transform: scale(1.2) translateY(-22px);
+    box-shadow:
+        0 14px 32px rgba(0,0,0,0.28),
+        0 0 22px rgba(255,255,255,0.7) inset,
+        0 0 28px rgba(255,255,255,0.55);
+    filter: brightness(1);
+    z-index: 20;
+}
+
+.alumni-item:hover img {
+    transform: scale(1.08);
+}
+
+/* RESPONSIVE: HP lebih kecil & animasi lebih pelan */
+@media (max-width:900px){
+    .alumni-track {
+        animation-duration: 15s;
+    }
+    .alumni-item {
+        width:200px;
+        height:260px;   /* tetap proporsi 3:4 tapi lebih kecil */
+    }
+}
+
+
+@media (max-width:900px){
+    .alumni-track {
+        animation-duration: 10s;
+    }
+    .alumni-item {
+        width:160px;
+        height:160px;
+    }
+}

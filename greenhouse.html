@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Green House – Pondok Pendawa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="greenhouse.css">
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="container">
+        <div>Pondok Pendawa</div>
+        <div>Entrepreneurship Boarding School</div>
+    </div>
+</div>
+
+<header>
+    <div class="container navbar">
+        <div class="logo">
+            <div class="logo-circle"></div>
+            <div class="logo-text">
+                Pondok Pendawa
+                <span>Pesantren Entrepreneurship</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html#hero">Profile</a></li>
+                <li><a href="index.html#program">Program</a></li>
+                <li><a href="index.html#unit-usaha">Kewirausahaan</a></li>
+                <li><a href="index.html#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="hero">
+    <div class="container hero-grid">
+        <div>
+            <div class="badge">Entrepreneurship Unit</div>
+            <h1 class="hero-title">Green House Pondok Pendawa</h1>
+            <p class="hero-subtitle">
+                Green House menjadi laboratorium pertanian modern bagi santri:
+                hidroponik, pembibitan, dan pengelolaan tanaman produktif bernilai ekonomi.
+            </p>
+            <a href="index.html#unit-usaha" class="btn btn-light">← Kembali ke daftar unit</a>
+        </div>
+
+        <div class="hero-image-wrapper">
+
+            <div class="hero-video-wrapper">
+
+                <!-- Video Google Drive autoplay mute -->
+                <iframe 
+    id="ghVideo"
+    class="hero-iframe"
+    src="https://drive.google.com/file/d/1_TgpNYqKWfcXNU2dT0tfFO3usQpehOsl/preview?autoplay=1&mute=1"
+    allow="autoplay; encrypted-media; fullscreen"
+    frameborder="0">
+</iframe>
+
+                <!-- Tombol UNMUTE -->
+                <button class="unmute-btn" id="unmuteBtn">🔊 Suara</button>
+
+            </div>
+
+            <div class="hero-caption">Aktivitas santri mengelola tanaman.</div>
+        </div>
+    </div>
+</section>
+
+<main>
+    <div class="container">
+        <div class="content-box">
+            <h2>Tentang Unit Green House</h2>
+            <p>Unit Green House memperkenalkan santri pada dunia pertanian modern.</p>
+
+            <h3>Fokus Kegiatan</h3>
+            <ul class="list">
+                <li>Budidaya sayuran hidroponik.</li>
+                <li>Pembibitan dan pemupukan.</li>
+                <li>Perencanaan usaha tani kecil.</li>
+                <li>Penjualan hasil panen.</li>
+            </ul>
+
+            <h3>Manfaat untuk Santri</h3>
+            <ul class="list">
+                <li>Memahami konsep pertanian modern.</li>
+                <li>Meningkatkan kemandirian.</li>
+                <li>Mengenal peluang bisnis agrikultur.</li>
+            </ul>
+
+            <h3>Galeri Kegiatan</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="ft gh 1.png"></div>
+                <div class="gallery-item"><img src="ft gh 2.png"></div>
+                <div class="gallery-item"><img src="ft gh 3.png"></div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<footer>
+    © <span id="year"></span> Pondok Pendawa – Unit Green House
+</footer>
+
+
+<!-- ================== SCRIPT DITEMPATKAN DI SINI (PALING BAWAH) ================== -->
+<script>
+
+// Set tahun otomatis
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Ambil elemen
+const unmuteBtn = document.getElementById("unmuteBtn");
+const iframe = document.getElementById("ghVideo");
+
+// Klik UNMUTE → reload video dengan suara ON
+unmuteBtn.addEventListener("click", () => {
+    iframe.src = "https://drive.google.com/file/d/1_TgpNYqKWfcXNU2dT0tfFO3usQpehOsl/preview?autoplay=1&mute=0";
+});
+
+</script>
+
+</body>
+</html>
