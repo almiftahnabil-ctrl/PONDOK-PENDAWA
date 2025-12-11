@@ -553,3 +553,91 @@ footer {
         height:160px;
     }
 }
+/* ==== MOBILE RESPONSIVE ==== */
+@media (max-width: 768px) {
+
+  /* Container lebih lebar di HP */
+  .container {
+    width: 95%;
+  }
+
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    width: 100%;
+    padding: .6rem 0;
+    text-align: left;
+  }
+
+  /* Hero section */
+  #hero {
+    padding: 2rem 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: .85rem;
+    margin: 0 auto 1rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image-wrapper {
+    margin-top: 1.2rem;
+  }
+
+  /* Layout utama: ubah jadi 1 kolom */
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* Sidebar turun ke bawah */
+  aside {
+    order: 2;
+  }
+
+  /* Section box lebih ringan */
+  .section-box {
+    padding: 1rem;
+  }
+
+  /* Unit usaha grid 1 kolom */
+  .unit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Alumni strip: kecilkan animasi dan ukuran gambar */
+  .alumni-item {
+    width: 160px;
+    height: 200px;
+  }
+
+  .alumni-track {
+    animation-duration: 20s;
+  }
+
+  footer {
+    font-size: .7rem;
+  }
+}
